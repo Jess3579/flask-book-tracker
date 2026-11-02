@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #1f3c88;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input, select, textarea, button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button, .button {
+    background: #1f3c88;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 10px 14px;
+    display: inline-block;
+    width: auto;
+    border-radius: 4px;
+}
+
+.card {
+    background: #eef2f7;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.flash {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+}
+
+.flash.success {
+    background: #d4edda;
+}
+
+.flash.danger {
+    background: #f8d7da;
+}
+
+.flash.warning {
+    background: #fff3cd;
+}
+
+.flash.info {
+    background: #d1ecf1;
+}
+
+.inline-form {
+    display: inline-block;
+    width: auto;
+    margin-right: 10px;
+}
+
+.actions {
+    margin-top: 20px;
+}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Search Books</h2>
+
+<form method="POST" action="{{ url_for('main.search') }}">
+    <label for="query">Search by title or author:</label>
+    <input type="text" name="query" id="query" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+{% if results %}
+    <h3>Results</h3>
+    {% for book in results %}
+        <div class="card">
+            <p><strong>Title:</strong> {{ book.title }}</p>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>First Publish Year:</strong> {{ book.first_publish_year or 'N/A' }}</p>
+
+            <form method="POST" action="{{ url_for('main.add_book') }}">
+                <input type="hidden" name="title" value="{{ book.title }}">
+                <input type="hidden" name="author" value="{{ book.author }}">
+                <input type="hidden" name="openlibrary_key" value="{{ book.openlibrary_key }}">
+                <input type="hidden" name="first_publish_year" value="{{ book.first_publish_year or '' }}">
+                <input type="hidden" name="cover_id" value="{{ book.cover_id or '' }}">
+                <input type="hidden" name="isbn" value="{{ book.isbn or '' }}">
+
+                <label>Status:</label>
+                <select name="status">
+                    <option value="Want to Read">Want to Read</option>
+                    <option value="Reading">Reading</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <label>Notes:</label>
+                <input type="text" name="notes">
+
+                <button type="submit">Save Book</button>
+            </form>
+        </div>
+    {% endfor %}
+{% endif %}
+{% endblock %}

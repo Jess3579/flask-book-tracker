@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Saved Books</h2>
+
+<form method="GET" action="{{ url_for('main.books') }}">
+    <label for="status">Filter by Status:</label>
+    <select name="status" id="status">
+        <option value="">All</option>
+        <option value="Want to Read" {% if status_filter == 'Want to Read' %}selected{% endif %}>Want to Read</option>
+        <option value="Reading" {% if status_filter == 'Reading' %}selected{% endif %}>Reading</option>
+        <option value="Completed" {% if status_filter == 'Completed' %}selected{% endif %}>Completed</option>
+    </select>
+    <button type="submit">Filter</button>
+</form>
+
+{% if books %}
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{ url_for('main.book_detail', book_id=book.id) }}">{{ book.title }}</a>
+                by {{ book.author or 'Unknown' }}
+                {% if book.status %} - {{ book.status }}{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books found.</p>
+{% endif %}
+{% endblock %}

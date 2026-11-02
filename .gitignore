@@ -1,0 +1,24 @@
+
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Private configuration and environment files
+config.json
+.env
+.env.*
+.flaskenv
+
+# Editor and system files
+.vscode/
+.DS_Store
+Thumbs.db

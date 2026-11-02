@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Book</h2>
+
+<form method="POST" action="{{ url_for('main.add_book') }}">
+    <label>Title:</label>
+    <input type="text" name="title" required>
+
+    <label>Author:</label>
+    <input type="text" name="author">
+
+    <label>Status:</label>
+    <select name="status" required>
+        <option value="Want to Read">Want to Read</option>
+        <option value="Reading">Reading</option>
+        <option value="Completed">Completed</option>
+    </select>
+
+    <label>Notes:</label>
+    <textarea name="notes"></textarea>
+
+    <button type="submit">Add Book</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+
+<div class="stats">
+    <div class="card">
+        <h3>Total Books</h3>
+        <p>{{ total_books }}</p>
+    </div>
+    <div class="card">
+        <h3>Currently Reading</h3>
+        <p>{{ total_reading }}</p>
+    </div>
+    <div class="card">
+        <h3>Completed</h3>
+        <p>{{ total_completed }}</p>
+    </div>
+</div>
+
+<h3>Recent Books</h3>
+{% if recent_books %}
+    <ul>
+        {% for book in recent_books %}
+            <li>
+                <a href="{{ url_for('main.book_detail', book_id=book.id) }}">{{ book.title }}</a>
+                {% if book.status %} - {{ book.status }}{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No books saved yet.</p>
+{% endif %}
+{% endblock %}
