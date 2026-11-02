@@ -3,6 +3,22 @@
 
 A Python Flask web application for searching, organizing, and tracking personal book collections.
 
+
+## Application Screenshots
+
+### Dashboard
+![Book Collection Dashboard](screenshots/dashboard.png)
+
+### Book Search
+![Book Search Results](screenshots/book-search.png)
+
+### Saved Books
+![Saved Book Collection](screenshots/saved-books.png)
+
+### Edit Book
+![Edit Book Form](screenshots/edit-book.png)
+
+
 ## Features
 
 - Search for books using the Open Library API
