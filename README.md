@@ -57,7 +57,7 @@ Completed academic project. Core features have been tested locally.
 
 1. Clone the repository:
 
-   git clone https://github.com/YOUR-USERNAME/flask-book-tracker.git
+   git clone https://github.com/Jess3579/flask-book-tracker.git
 
 2. Open the project folder:
 
